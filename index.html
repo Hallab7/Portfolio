@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <met#aeb3b8et="utf-8">
-        <title>DarkCV - Bootstrap CV Resume Template</title>
+        <title>Hallab Portfolio</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+        <link href="img/hallab.jpg" rel="icon">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -298,7 +298,7 @@
                                 <div class="row portfolio-container">
                                     <div class="col-md-6 mb-4 portfolio-item first">
                                         <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                                            <img class="img-fluid w-100" src="img/portfolio-1.png" alt="">
                                             <div class="portfolio-btn d-flex align-items-center justify-content-center">
                                                 <a href="img/portfolio-1.png" data-lightbox="portfolio">
                                                     <i class="bi bi-plus text-light"></i>
@@ -306,11 +306,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-4 portfolio-item second">
+                                    <div class="col-md-6 mb-4 portfolio-item first">
                                         <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
+                                            <img class="img-fluid w-100" src="img/portfolio-2.png" alt="">
                                             <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                                <a href="img/portfolio-2.jpg" data-lightbox="portfolio">
+                                                <a href="img/portfolio-2.png" data-lightbox="portfolio">
                                                     <i class="bi bi-plus text-light"></i>
                                                 </a>
                                             </div>
@@ -318,9 +318,9 @@
                                     </div>
                                     <div class="col-md-6 mb-4 portfolio-item first">
                                         <div class="position-relative overflow-hidden mb-2">
-                                            <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
+                                            <img class="img-fluid w-100" src="img/portfolio-3.png" alt="">
                                             <div class="portfolio-btn d-flex align-items-center justify-content-center">
-                                                <a href="img/portfolio-3.jpg" data-lightbox="portfolio">
+                                                <a href="img/portfolio-3.png" data-lightbox="portfolio">
                                                     <i class="bi bi-plus text-light"></i>
                                                 </a>
                                             </div>
@@ -331,6 +331,26 @@
                                             <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
                                             <div class="portfolio-btn d-flex align-items-center justify-content-center">
                                                 <a href="img/portfolio-4.jpg" data-lightbox="portfolio">
+                                                    <i class="bi bi-plus text-light"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 portfolio-item first">
+                                        <div class="position-relative overflow-hidden mb-2">
+                                            <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
+                                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                                <a href="img/portfolio-5.jpg" data-lightbox="portfolio">
+                                                    <i class="bi bi-plus text-light"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4 portfolio-item second">
+                                        <div class="position-relative overflow-hidden mb-2">
+                                            <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
+                                            <div class="portfolio-btn d-flex align-items-center justify-content-center">
+                                                <a href="img/portfolio-6.jpg" data-lightbox="portfolio">
                                                     <i class="bi bi-plus text-light"></i>
                                                 </a>
                                             </div>
@@ -386,30 +406,29 @@
                     <!-- Contact Start -->
                     <section class="py-5 wow fadeInUp" data-wow-delay="0.1s" id="contact">
                         <h1 class="title pb-3 mb-5">Contact Me</h1>
-						
-                        <form>
+                        <form id="contactForm">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0 bg-secondary" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control border-0 bg-secondary" id="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control border-0 bg-secondary" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control border-0 bg-secondary" id="email" placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control border-0 bg-secondary" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control border-0 bg-secondary" id="subject" placeholder="Subject" required>
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control border-0 bg-secondary" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
+                                        <textarea class="form-control border-0 bg-secondary" placeholder="Leave a message here" id="message" style="height: 200px" required></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
@@ -418,26 +437,21 @@
                                 </div>
                             </div>
                         </form>
+                    
+                        <!-- Popup Modal -->
+                        <div id="popup" class="popup">
+                            <div class="popup-content">
+                                <span id="closePopup" class="close-icon">&times;</span>
+                                <p id="popupMessage"></p>
+                            </div>
+                        </div>
                     </section>
                     <!-- Contact End -->
 
                     <!-- Footer Start -->
                     <section class="wow fadeIn" data-wow-delay="0.1s">
-                        <div class="bg-secondary text-light text-center p-5">
-                            <!-- <div class="d-flex justify-content-center mb-4">
-                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-dark btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
-                            </div> -->
-                            <!-- <div class="d-flex justify-content-center mb-3">
-                                <a class="text-light px-3 border-end" href="#">Privacy</a>
-                                <a class="text-light px-3 border-end" href="#">Terms</a>
-                                <a class="text-light px-3 border-end" href="#">FAQs</a>
-                                <a class="text-light px-3" href="#">Help</a>
-                            </div> -->
-							
-                          
+                        <div class="bg-secondary text-light text-center p-2">
+                            
 							<p class="m-0">Hallab &copy; 2025</p>
                         </div>
                     </section>

@@ -93,3 +93,67 @@
     });
 })(jQuery);
 
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Telegram bot token and chat ID
+    const botToken = "7608059052:AAF9PBEKuFUlfz53sicJg2pD0UVoGSzG4V4";
+    const chatId = "7048781309";
+
+    // Format the message
+    const telegramMessage = `
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+Message: ${message}
+    `;
+
+    // Send the message to Telegram
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: telegramMessage,
+        }),
+    });
+
+    if (response.ok) {
+        showPopup(`Thanks for your submission ${name}, we will get back to you shortly!`);
+        // Clear the form inputs
+        document.getElementById("contactForm").reset();
+    } else {
+        showPopup("Ops! Error occurred. Please try again.");
+    }
+});
+
+// Function to show popup
+function showPopup(message) {
+    const popup = document.getElementById("popup");
+    const popupMessage = document.getElementById("popupMessage");
+    popupMessage.textContent = message;
+    popup.style.display = "flex";
+
+    document.body.classList.add("no-scroll");
+
+    // Close the popup on X icon click
+    document.getElementById("closePopup").addEventListener("click", closePopup);
+
+    // Close the popup when clicking anywhere on the screen
+    popup.addEventListener("click", closePopup);
+}
+
+// Function to close popup
+function closePopup() {
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
+
+    document.body.classList.remove("no-scroll");
+}
